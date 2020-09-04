@@ -1,0 +1,330 @@
+\documentclass[manuscript=article, journal=jceda8]{achemso}
+%\documentclass[journal = jacsat]{achemso}
+\usepackage{chemformula} % Formula subscripts using \ch{}
+\usepackage[T1]{fontenc} % Use modern font encodings
+\usepackage[utf8]{inputenc}
+\usepackage[version=3]{mhchem}
+\usepackage{gensymb}
+\usepackage{upgreek}
+\usepackage{pgfplots}
+\usepackage{pst-plot}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepgfplotslibrary{colormaps}
+\usetikzlibrary{pgfplots.colormaps}
+\usepgfplotslibrary{external} 
+\tikzexternalize
+\newcommand*\mycommand[1]{\texttt{\emph{#1}}}
+
+\author{János Klucsik}
+\affiliation{Department of General and Physical Chemistry, University of Pécs, Ifjúság útja 6, 7622 Pécs, Hungary}
+
+\author{Venkat Rajat Rao Yalamarti}
+\affiliation{Department of General and Physical Chemistry, University of Pécs, Ifjúság útja 6, 7622 Pécs, Hungary}
+
+\author{András Kiss}
+\affiliation{Department of General and Physical Chemistry, University of Pécs, Ifjúság útja 6, 7622 Pécs, Hungary}
+\email{akiss@gamma.ttk.pte.hu}
+
+\title{Demonstration of potentiometric pH determination using the filament of an incandescent lightbulb as indicator electrode}
+\keywords{pH, tungsten electrode, ion-selective electrode, potentiometry}
+
+
+\begin{document}
+\begin{abstract}
+The aim of this paper is to avail teachers of an interesting and engaging experiment to teach students about pH and the properties and limitations of ion--selective electrodes. We demonstrate the fabrication of a simple and economical metal/metal--oxide type hydrogen--ion selective electrode using accessible household items. The sensing element is made from the tungsten alloy filament of an incandescent lightbulb, that is sandwiched between two pieces of Plexiglass using superglue. 
+
+The results presented in this paper are entirely based on measurements performed by 2nd year BSc Chemistry students, with electrodes that they have fabricated themselves. The students were easily engaged during the fabrications step, and they showed a high level of motivation later during the measurement and the evaluation steps.
+
+% of the earliest concepts of chemistry taught in school is pH. It is usually introduced during the discussion of acids and bases. Students are taught to detect the acidity of substances using pH indicators, usually in the form of indicator paper and eventually with a glass electrode.
+
+%The use of other ion--selective electrodes are usually not a part of 
+
+%. While this method is convenient and easy for students to relate to, apart from not being very accurate, it does not give any deeper insight into the meaning of pH. To truly comprehend pH, students need to learn to approach the concept from an electroanalytical point of view. The aim of this paper is to avail teachers of an additional interactive and demonstrative experiment in order to facilitate this transition.
+
+
+%Several electrodes have been fabricated and used by Chemistry BSc students as part of an electrochemistry special course. The experiment elicited an interest in electroanalytical chemistry among the students, and it helped them to acquire a deeper understanding of pH.
+
+%A simple and robust pH sensitive electrode is presented that can be constructed from cheap and readily available components. The electrode is of the metal/metal--oxide type. The sensing element is the tungsten filament of an incandescent light bulb, whose potential in a solution is dependent on the hydrogen--ion activity. The electrode can be easily built in a high--school chemistry laboratory by students, and can be used to demonstrate the potentiometric determination of pH.
+\end{abstract}
+
+\section{Introduction}
+
+The glass electrode is the most well-known ion-selective electrode, because the negative logarithm of hydrogen-ion activity that is pH, has special importance. 
+%\begin{equation}
+%\textrm{pH} = -\log_{10} a_{\textrm{H}^+}
+%\end{equation}
+It is found in virtually every chemistry laboratory, and students are likely to encounter it during their highschool education. However, besides the glass electrode, highschool students and even undergraduates usually don't learn about other ion--selective electrodes. 
+%Using other type of electrodes to determine pH might be beneficial in understanding the concept of pH, and additionally learning more about ion-selective electrodes in general.
+The exclusivity of the glass electrode is due to it's relatively low cost and excellent characteristics. Other ion-selective electrodes are usually more expensive and don't function as well. For educational purposes however, they could be valuable tools, because they are often easily constructed and the imperfections of ion--selective electrodes can be easily demonstrated. There are several low cost fabrication techniques described in the literature, which allow students in a highschool chemistry laboratory to fabricate their own electrodes, such as ionophore based indicator electrodes \cite{goldcamp2010inexpensive, marafie2007plastic} or simple reference electrodes \cite{riyazuddin1994low}. There is even a procedure to fabricate low cost glass electrodes from microscope slide cover sheets \cite{yong2019simple}. These electrodes can be manufactured and calibrated by students in a few laboratory sessions and can provide a great learning experience for them. They allow a view on pH and ion--selective electrodes from another angle, and students are more likely to understand the function of a device when they fabricate it themselves.
+
+The electrode demonstrated in this paper is an ion-selective electrode that is made using the filament of an incandescent light bulb. It is well known that the filament of incandescent lightbulbs is made of an alloy called \emph{,,tungsten bronze''} that is mostly tungsten with a small amount of potassium to improve ductility \cite{cisternas2015electrode, wechter1972use, schade2010100}. The electrode is of the metal/metal-oxide type that is sensitive to pH. Its function is based on the intercalation and deintercalation of hydrogen ions into the oxide layer followed by a change in the oxidation state of tungsten oxide \cite{fenster2008single}:
+
+\begin{equation}
+        \ce{WO_3 + xH^+ + xe^- <=> H_xWO_3}
+\end{equation}
+
+The metal/metal-oxide type pH electrodes are usually used in research if the application of glass electrodes is challenging or impossible. These include measuring pH at high temperature or in hydrogen--fluoride solution, or application in the food industry. 
+Besides the tungsten electrode, one of the most often used type of these is the Ir/IrO$_2$ electrode \cite{beyenal2004improved}.
+The oldest is certainly the Sb/Sb$_2$O$_3$ electrode, its initial characterization dating back to 1923 \cite{uhl1923electrometric}.
+%It is pH sensitive because hydrogen ions participate in the equilibrium between antimony and its oxide on the surface:
+%
+%\begin{equation}
+%        \ce{2Sb_{(s)} + 3H_2O <=> Sb_2O_3 + 6H^+ + 6e^-}
+%\end{equation}
+
+The fabrication and calibration of the above mentioned tungsten filament electrode is described. The components for the electrode can be obtained from a local hardware store, and the construction is very simple, requiring only an incandescent lighbulb, a small sheet of PlexiGlas and superglue. Electrodes prepared by students will be shown as well as the results of the calibration and selectivity study performed by 1st and 2nd year university BSc students of chemistry. Altogether 8 students participated in the demonstration that involved a 2 hour seminar about ion-selective electrodes and pH (for which the discussion points are roughly outlined in the \emph{Theory} section) and two 3 hour laboratory sessions fabricating and characterizing the electrodes. A typical notebook prepared by a 2nd year chemistry BSc student about the demonstration is shown as example in the supporting material.
+
+\section{Theory}
+
+pH is one of the most important concepts in chemistry, originally defined by S\o rensen in 1909 \cite{sorensen1909messung} as the negative logarithm of the concentration of hydrogen ion:
+
+\begin{equation}
+\textrm{pH} = -\log_{10} c_{\textrm{H}^+}
+\end{equation}
+
+At first glance, it looks like a deceptively simple concept. Complications start to arise when we replace concentration with activity, taking into account that hydrogen ions have charge, therefore their behaviour correlates more closely with activity than concentration:
+
+\begin{equation}
+\textrm{pH} = -\log_{10} a_{\textrm{H}^+} = -\log_{10} c_{\textrm{H}^+} \gamma_{H^+}
+\end{equation}
+
+where $a_{H^+}$ is the activity and $\gamma_{H^+}$ is the activity coefficient of hydrogen ions. This definition however raises another problem. It includes the activity coefficient of a single ion, which cannot be separated from the activity coefficient of counterions. The IUPAC recommended solution \cite{buck2002measurement} is the \emph{Bates--Guggenheim} convention  \cite{bates1960report}. In order to provide a basis for the determination of single ion activity coefficients, -- much like the \emph{standard hydrogen electrode} is the conventional basis of reduction potentials -- the activity coefficient of chloride ion is defined using the extended Debye--Hückel equation:
+
+\begin{equation}
+-\log_{10} \gamma = \frac{A z^2 \sqrt{I}} {1 + Ba\sqrt{I} }
+\label{EDH}
+\end{equation}
+
+where $A = 0.51$ and $B = 0.33 \cdot 10^8 $ are constants (for water at 25 $\celsius$), $a$ is ionic radius and $I$ is ionic strength calculated with the following equation:
+
+\begin{equation}
+I = \begin{matrix}\frac{1}{2}\end{matrix}\sum_{i=1}^{n} c_i z_i^{2}
+\label{ionic_strength}
+\end{equation}
+
+where $c_i$ and $z_i$ is the concentration and charge of the $i$th ion, and $n$ is the total number of ionic species in the solution. Based on the convention, activity coefficients of other ions can be determined experimentally.
+
+In practice, pH is most commonly measured with a glass electrode.
+It has been known for more than a hundred years that the potential difference measured across a glass membrane depends on the ratio of the hydrogen ion activity in the two solutions that the membrane separates \cite{haber1909elektrische, haber1909concerning}.
+The glass electrode is usually combined with a reference electrode for convenience.
+Such an electrode pair is called the \emph{,,combined glass electrode''}, and this the most common type the students might encounter.
+The glass electrode is the best electrochemical sensor and one of the best sensors ever made, with a linear response of over more than 13 orders of magnitude and excellent selectivity.
+However, it's not perfect. One of the imperfections is that although to a negligible extent, it responds to cations other than hydrogen ion.
+This behaviour is described by the Nikolsky--equation that takes the effect of interfering ions into account with the so-called \emph{,,selectivity coefficient''} \cite{nicolsky1937theory}:
+
+\begin{equation}
+E=E^\theta + \frac{RT}{z_iF} \ln \left [ a_i + \sum_{j} \left ( k_{ij}a_j^{z_i/z_j} \right ) \right ]
+\end{equation}
+
+where $E$ is the potential of the ion--selective electrode, $E^0$ is the standard potential, $R$ is the universal gas constant, $T$ is the thermodynamic temperature, $z_i$ and $z_j$ is the charge of the primary ion $i$ and interfering ion $j$, F is the Faraday constant, $a_i$ and $a_j$ is the activity of the primary ion $i$ and interfering ion $j$, $k_{ij}$ is the selectivity coefficient. Methods to determine the selectivity coefficients are derived from this equation, and the one used in this work is detailed in the \emph{,,Methods''} section.
+
+%economical instruments \cite{kubinova2015chemduino, grinias2016inexpensive, jin2018open}
+
+\section{Materials and Methods}
+\paragraph{Electrode fabrication.}
+
+The electrodes were fabricated entirely by students with guidance from the supervisor. To obtain the sensing element of the electrode, a 100 W incandescent lightbulb (Tungsram brand, purchased at local hardware store) was carefully wrapped in cloth and broken with a mallet. The contact wire that still had the filament attached was cut near the stem (Fig. \ref{fig:fabrication}a). The electrode body was prepared from two, 4 mm thick, $\approx$ 0.5 cm $\times$ $\approx$ 2 cm, similarly shaped Plexiglass pieces (Fig. \ref{fig:fabrication}b). In one of them, a $\approx$ 1 mm groove was cut longitudinally, in which the filmanet with stem was layed (Fig. \ref{fig:fabrication}c). Then, superglue was applied onto the Plexiglas surface that contained the groove with the filament and stem. The other Plexiglass piece was pressed onto the superglued surface, and was held firmly until the superglue cured (Fig. \ref{fig:fabrication}d). The electrode was sanded and polished from all sides except where the electrical lead, the stem was protruding (Fig. \ref{fig:fabrication}e). The PlexiGlas enclosure is necessary to limit the area of contact with the sample solution to only a well defined surface of the tungsten, and avoid the stem or further electrical leads to get in contact with the solution. If any metallic part of the electrode that is not tungsten gets in contact with the sample solution, a mixed--potential is measured, that does not depend only on pH.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{electrode_fabrication.eps}
+\caption{The fabrication process of the tungsten filament electrode. }
+\label{fig:fabrication}
+\end{figure}
+
+\paragraph{Calibration.}
+
+The fabricated tungsten filament electrodes were calibrated by students in a series of Britton--Robinson buffers with the following pH values: 2.19, 3.04, 4.10, 5.12, 6.09, 7.19, 8.08, 8.89, 9.87, 10.88, 11.81. The buffers were also prepared by the students. The pH was measured with a home made pH meter built previously using an Arduino similar to devices reported by other authors previously \cite{jin2018open}. 
+%WTW SenTix combined pH electrode connected to a WTW inoLab pH 740p high input impedance pH meter (Xylem Analytics Germany Sales GmbH \& Co. KG, Weilheim Germany), that was calibrated with three high accuracy pH buffers (4.00, 7.00, 10.00 at 20 $\celsius$, Scharlab, S.L. Barcelona, Spain) by the laboratory supervisor beforehand.
+To verify the pH of the buffer series, it was first measured with a conventional glass electrode (WTW SenTix combined pH electrode connected to a WTW inoLab pH 740p high input impedance pH meter, Xylem Analytics Germany Sales GmbH \& Co. KG, Weilheim Germany), that was calibrated with three high accuracy pH buffers (4.00, 7.00, 10.00 at 20 $\celsius$, Scharlab, S.L. Barcelona, Spain) by the laboratory supervisor beforehand.
+The glass and the tungsten filament electrodes were calibrated by measuring their potential against the internal reference electrode of the glass electrode in the buffer series. The potential of the indicator electrode was continuously monitored and the results were recorded by the computer connected to the home made pH meter.
+%values were recorded when the instrument indicated a steady reading. This ensured that they were taken at the same point of the response curve.
+The students then plotted the potential values as a function of time and as a function of the corresponding pH. Then, they performed a linear regression on the potential--pH data using a commonly available open source spreadsheet program (LibreOffice) to determine the slope of the potentiometric cell. 
+
+
+\paragraph{Selectivity study.}
+
+The selectivity coefficient was determined using the \emph{,,separate solution method II (SSMII)''} \cite{buck1994recommendations}. Besides the pH buffer series, several other series of solutions (KCl, NaCl, CaCl$_2$ and MgCl$_2$) were prepared by the students, each containing an interfering ion. Since the primary ion for the glass and the tungsten filament electrodes is already present in water at an activity that would influence the selectivity study, a buffer had to be used to lower the hydrogen ion activity. Most of the common pH buffers contain alkaline metals, and they could not be used to carry out the selectivity study, because alkaline and alkaline earth metals are among the most common interferences. For this reason, a pH = 8 TRIS buffer was used as a solvent to create the dilution series using KCl, NaCl, CaCl$_2$ and MgCl$_2$. In each cases, the activities ranged from 10$^{-6}$ M to 10$^{-1}$ M with tenfold increments in concentration. The electrodes were immersed in each of the solutions and the resulting potential differences were measured and recorded with the already mentioned pH meter. 
+
+To determine the selectivity coefficients, first the activities had to be calculated from the concentrations. This involved the calculation of activity coefficients which in turn required the calculation of the ionic strength for each solution. To calculate the ionic strength, eq. \ref{ionic_strength}. was used. Then the extended Debye-Hückel equation \ref{EDH} was applied to calculate the activity coefficients. The ionic radii for the interfering ions were looked up in the literature \cite{kielland1937individual}. To obtain the activities, concentrations were multiplied with the corresponding activity coefficients.
+
+To calculate the selectivity coefficient, a common potential was picked and the corresponding activity of the primary and interfering ions were calculated. The selectivity coefficient is then given by the ratio (SSMII):
+
+\begin{equation}
+k_{i,j} = \frac{a_i} {a_j^{z_i/z_j}}
+\end{equation}
+
+where $a_i$ and $a_j$ are the activities of the primary and interfering ion at the same potential, and $z_i$ and $z_j$ is the charge of the primary and interfering ions.
+
+\section{Hazards}
+When salvaging the tungsten filament from the lighbulb, care must be taken. The lightbulb must be wrapped several times in a cloth before it is hit with a mallet. Care must be taken when the filament is picked up from the broken pieces of glass. When the Plexiglass body is prepared, a saw is used to cut the groove, then superglue is used to enclose the filament in the groove. During these steps, close supervision of the students is necessary to prevent any accident. Lastly, HCl and NaOH is used during the preparation of the pH buffer series. If these get in contact with skin or the eye, flush with plenty of tapwater for several minutes.
+
+
+\section{Results and Discussion}
+
+The pH values of the Britton--Robinson buffer series were first measured with a calibrated glass electrode. Once these were known with high accuracy, the same buffer series was used again to calibrate the tungsten filament electrode. The raw data can be seen in Fig. \ref{fig:calibration}A, while the resulting calibration plot in Fig. \ref{fig:calibration}B. The slope of the calibration equation is 40.05 mV / pH, which is significantly lower than that of the theoretically expected value from the Nernst--equation. The lower value might be explained by the alloying elements in the tungsten filamentm, and it is well known that even high purity metal/metal--oxide electrodes don't reach the nernstian slope \cite{kriksunov1994tungsten, midgley1990review}. Nonetheless, a slope of 40.05 mV / pH is enough to measure pH reliably. The electrode response was slighty non-linear, but it can be said that it works well within the tested pH range of 2--12.
+
+Because of these alloying elements, the tungsten filament electrode was expected to be less selective towards hydrogen ions than the glass electrode. The selectivity study was performed in dilution series of KCl, NaCl, CaCl$_2$ and MgCl$_2$ from 10$^{-1}$ M to 10$^{-6}$ M with tenfold increases in concentration. A buffer was used to lower the hydrogen ion activity, and because most of the alkaline buffers contain an ion that interferes with hydrogen ion--selective electrodes, the TRIS buffer was selected at pH = 8.
+The measured potentials of the tungsten filament electrode for the interfering ions can be seen in Fig. \ref{fig:calibration}B. The electrodes showed remarkable selectivity towards hydrogen-ions. Only a slight increase in potential was observed at higher than 10$^{-4}$ M concentration. Below this concentration the potential corresponding to pH = 8 buffer was observed ($\approx$ -315 mV). Interestingly, K$^+$ caused the potential to decrease at higher concentration. This result was replicated several times. The selectivity coefficient values are summarized in Table \ref{table:selectivity}.
+
+IUPAC recommends the use of the separate solution (and also the \emph{,,fixed interference''}) method only if the electrode exhibits a Nernstian response to both the primary and the interfering ions \cite{buck1994recommendations}. With the fabricated tungsten electrode it is not the case. Within the used interfering ion activity range the tested ions interfere with the measurement only very slightly. Because the electrode performs so well, the use of the \emph{SSMII} method might be unjustified, and it could be simply stated instead that K$^+$, Na$^+$, Ca$^{2+}$ and Mg$^{2+}$ ions do not interfere significantly with the pH measurement under these conditions. Nevertheless, there is a noticeable and reproducible interference, and the calculations yield reasonable selectivity coefficients.
+
+\begin{figure}[h!]
+\centering
+
+\begin{comment}
+\begin{tikzpicture}
+\begin{axis}[
+legend style={draw=none, at={(0.02,0.98)}, anchor=north west},
+	xmin=0.5, xmax=12, width=7cm,height=7cm,xlabel=pCATION, ylabel={E vs. Ag/AgCl/KCl(3 M), mV}, clip marker paths=true, xtick = {0,1,2,3,4,5,6,7,8,9,10,11,12}, legend pos=north east, xminorticks=true, minor x tick num = 1]
+\addplot [only marks, domain=0:5.5, mark=*, color=red] table {data/calibration/uveg_h.txt};
+\addplot [only marks, domain=0:5.5, mark=*, color=blue] table {data/calibration/uveg_na.txt};
+\addplot [only marks, domain=0:5.5, mark=*, color=green] table {data/calibration/uveg_k.txt};
+\addplot [only marks, domain=0:5.5, mark=*, color=black] table {data/calibration/uveg_mg.txt};
+\addplot [only marks, domain=0:5.5, mark=*, color=purple] table {data/calibration/uveg_ca.txt};
+\addplot [domain=0:12, samples=500, line width=0.1mm] {402.806-x*57.189};
+\addlegendentry{H$^+$} 
+\addlegendentry{Na$^+$}
+\addlegendentry{K$^+$}
+\addlegendentry{Mg$^{2+}$}
+\addlegendentry{Ca$^{2+}$}
+\node[anchor=north east] at (rel axis cs:0.15,0.98) {A};
+\node[anchor=south west] at (rel axis cs:0,0) {$\Delta$ S = 57.19 mV / pH};
+\node[anchor=south west] at (rel axis cs:0,0.1) {R$^2$ = 0.999999};
+\end{axis}
+\end{tikzpicture}
+\end{comment}
+
+\begin{tikzpicture}
+\begin{axis}	[
+		%legend style={draw=none},
+		legend style={draw=none, at={(0.5,0.98)}, anchor=north},
+		%legend style=draw=none, at={(0.5,-0.1)}, anchor=north
+		xmin=0,
+		xmax=660,
+		ymin=-540,
+		ymax=-30,
+		width=7cm,
+		height=7cm,
+		xlabel=t / s,
+		ylabel=E vs. Ag/AgCl/KCl(3 M) / mV
+		%ytick={-0.31, -0.3, -0.29, -0.28, -0.27},
+		%/pgf/number format/.cd, use comma, 1000 sep={}
+		]
+\addplot [color=red, only marks] table {data/calibration/time_dep.csv};
+\node[anchor=north east] at (rel axis cs:0.15,0.98) {A};
+%\node[anchor=north west] at (rel axis cs:0.02,0.98) {A};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{axis}[
+	legend style={draw=none, at={(0.02,0.98)}, anchor=north west},
+	xmin=0.5, xmax=12,
+	%ymin=-500, ymax=-50,
+	width=7cm,height=7cm,
+	xlabel=pCATION, ylabel={E vs. Ag/AgCl/KCl(3 M) / mV},
+	clip marker paths=true,
+	xtick = {0,1,2,3,4,5,6,7,8,9,10,11,12}, legend pos=north east, xminorticks=true, minor x tick num = 1]
+\addplot [only marks, domain=0:5.5, mark=*, color=red] table {data/calibration/izzo_h.txt};
+\addplot [domain=0:5.5, mark=*, color=blue] table {data/calibration/izzo_na_c.txt};
+\addplot [domain=0:5.5, mark=*, color=green] table {data/calibration/izzo_k_c.txt};
+\addplot [domain=0:5.5, mark=*, color=black] table {data/calibration/izzo_mg_c.txt};
+\addplot [domain=0:5.5, mark=*, color=purple] table {data/calibration/izzo_ca_c.txt};
+\addplot [domain=0:12, samples=500, line width=0.1mm] {0.895-x*40.05};
+\addlegendentry{H$^+$} 
+\addlegendentry{Na$^+$}
+\addlegendentry{K$^+$}
+\addlegendentry{Mg$^{2+}$}
+\addlegendentry{Ca$^{2+}$}
+\node[anchor=north east] at (rel axis cs:0.15,0.98) {B};
+\node[anchor=south west] at (rel axis cs:0,0) {$\Delta$ S = 40.05 mV / pH};
+\node[anchor=south west] at (rel axis cs:0,0.1) {R$^2$ = 0.997582};
+\draw[dashed, color=gray] (axis cs:0.5,-340) -- (axis cs:6.5,-340) -- (axis cs:6.5,-285) -- (axis cs:0.5,-285) -- (axis cs:0.5,-340);
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[
+	legend style={draw=none, at={(0.02,0.98)}, anchor=north west},
+	xmin=0.5, xmax=6.5,
+	ymax=-285,
+	width=7cm,height=7cm,
+	xlabel=pCATION, ylabel={E vs. Ag/AgCl/KCl(3 M) / mV},
+	clip marker paths=true,
+	xtick = {0,1,2,3,4,5,6}, legend pos=north east, xminorticks=true, minor x tick num = 1]
+\addplot [domain=0:5.5, mark=*, color=blue] table {data/calibration/izzo_na_c.txt};
+\addplot [domain=0:5.5, mark=*, color=green] table {data/calibration/izzo_k_c.txt};
+\addplot [domain=0:5.5, mark=*, color=black] table {data/calibration/izzo_mg_c.txt};
+\addplot [domain=0:5.5, mark=*, color=purple] table {data/calibration/izzo_ca_c.txt};
+\addlegendentry{Na$^+$}s
+\addlegendentry{K$^+$}
+\addlegendentry{Mg$^{2+}$}
+\addlegendentry{Ca$^{2+}$}
+\node[anchor=north east] at (rel axis cs:0.15,0.98) {C};
+
+\end{axis}
+\end{tikzpicture}
+
+\caption{Calibration and selectivity study of the glass electrode (A), and the tungsten filament electrode (B). (C)}
+\label{fig:calibration}
+\end{figure}
+
+
+\begin{comment}
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}	[
+		%legend style={draw=none},
+		legend style={draw=none, at={(0.5,0.98)}, anchor=north},
+		%legend style=draw=none, at={(0.5,-0.1)}, anchor=north
+		xmin=0,
+		xmax=660,
+		ymin=-500,
+		ymax=-50,
+		width=12cm,
+		height=8cm,
+		xlabel=t / s,
+		ylabel=E vs. Ag/AgCl/KCl(3 M) / mV
+		%ytick={-0.31, -0.3, -0.29, -0.28, -0.27},
+		%/pgf/number format/.cd, use comma, 1000 sep={}
+		]
+\addplot [color=red, only marks] table {data/calibration/time_dep.csv};
+%\node[anchor=north west] at (rel axis cs:0.02,0.98) {A};
+\end{axis}
+\end{tikzpicture}
+	\caption{A két mikroelektród kalibrációs mérései. Összehasonlításképpen egy üvegelektród egyidejűleg mért potenciál--idő mérését is ábrázoltam. A potenciált mindhárom elektród esetében az üvegelektród belső, Ag/AgCl/KCl (3 M) referencia félcellájához képest mértem egy kellően nagy bemeneti impedanciájú feszültségmérő (eDAQ isopod EPU) felhasználásával.}
+\label{fig:kalibracios_meres}
+\end{figure}
+\end{comment}
+
+\begin{table}[]
+\caption{The determined selectivity coefficients of the tungsten filament electrode for the different cations.}
+\label{table:selectivity}
+\begin{tabular}{ll}
+Interfering ion & Selectivity coefficient \\
+\hline
+Na$^+$             & 8.57 $\cdot$ 10$^{-7}$              \\
+K$^+$              & 1.91 $\cdot$ 10$^{-7}$              \\
+Ca$^{2+}$            & 9.48 $\cdot$ 10$^{-7}$              \\
+Mg$^{2+}$            & 6.17 $\cdot$ 10$^{-7}$            
+\end{tabular}
+\end{table}
+
+\section{Conclusion}
+	
+The construction and usage of an economical pH sensitive electrode was presented that is highly selective towards hydrogen ions. It has been shown that the electrode performs very well, with a 40.05 mV / pH slope in the pH range 2--12. There was only a slight interference from K$^+$, Na$^+$, Mg$^{2+}$ and Ca$^{2+}$ ions that was enough to determine the selectivity coefficients and demonstrate the imperfection of ion--selective electrodes.
+
+The potentiometric cell utilizing the electrode can be used as an engaging demonstration of the potentiometric determination of pH. The participating students showed high motivation during the electrode fabrication process and they were excited to use electrodes that they've prepared themselves to measure pH. As a result of the interactive demonstration and evaluation, they showed a deeper understanding of ion--selective potentiometry and pH.
+
+%The experiment has been carried out by 1st year chemistry BSc students with electrodes that they have prepared themselves.
+
+
+
+\begin{acknowledgement}
+The project has been supported by the European Union, co-financed by the European Social Fund Grant no.: EFOP-3.6.1.-16-2016-00004 entitled by Comprehensive Development for Implementing Smart Specialization Strategies at the University of Pécs. The work was supported by the Hungarian Research Grant: NKFI No.: K125244.
+\end{acknowledgement}
+
+\bibliography{tungsten}
+\end{document}
